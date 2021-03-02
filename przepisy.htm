@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html slick-uniqueid="3" xmlns="http://www.w3.org/1999/xhtml"><head>
+	 				<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+					<script type="text/javascript" src="test_artykuly_pliki/yetii.js"></script>
+					<script type="text/javascript" src="test_artykuly_pliki/swfobject.js"></script>
+					<script type="text/javascript" src="test_artykuly_pliki/custom_form.js"></script><style type="text/css">input.styled { display: none; } select.styled { position: relative; width: 190px; opacity: 0; filter: alpha(opacity=0); z-index: 5; } .disabled { opacity: 0.5; filter: alpha(opacity=50); }</style>
+					<script type="text/javascript" src="test_artykuly_pliki/mootools.js"></script>
+					<script type="text/javascript" src="test_artykuly_pliki/slideshow.js"></script>
+					<link href="test_artykuly_pliki/style.css" rel="stylesheet" type="text/css">
+					<link href="test_artykuly_pliki/font.css" rel="stylesheet" type="text/css">
+					<link href="templates/templates.css" rel="stylesheet" type="text/css">
+					<script type="text/javascript">
+				      var flashvars = {};
+				      var params = {};
+				      params.play = "true";
+				      params.menu = "false";
+				      params.quality = "best";
+				      params.bgcolor = "#fff";
+				      params.wmode  = "transparent";
+				      params.allowscriptaccess = "sameDomain";
+				      var attributes = {};
+				      attributes.id = "flash1";
+				      swfobject.embedSWF("smoke.swf", "smoke", "100", "250", "9.0.0", false, flashvars, params, attributes);
+
+						function replaceT(obj){
+						var newO=document.createElement('input');
+						newO.setAttribute('type','password');
+						newO.setAttribute('name',obj.getAttribute('name'));
+						newO.setAttribute('style', 'margin-top:5px;'); 
+						newO.setAttribute('class', 'login'); 
+						obj.parentNode.replaceChild(newO,obj);
+						newO.focus();
+						}
+                        
+                   function showArticleImage(id){
+                        var container = $('articleImages_box');
+                        var images = container.getElements('img');
+
+                         
+                         images[id].fade('in');
+                        for(var i=0; i<images.length; i++){
+                            if(i!=id){
+                                 images[i].fade('out');
+                            } 
+                        }
+                   }
+                   
+                   
+                    function hideArticleImage(){
+                        var container = $('articleImages_box');
+                        var images = container.getElements('img');
+                        images[0].fade('in');
+                        for(var i=1; i<images.length; i++){
+                                images[i].fade('out');
+                        }
+                    }
+                        
+                      
+					</script><style media="screen" type="text/css">#smoke {visibility:hidden}</style>
+			</head>
+			<body>
+
+				<div class="header">
+				<div class="smoke_conteiner">
+				    <object data="test_artykuly_pliki/smoke.swf" id="flash1" type="application/x-shockwave-flash" height="250" width="100"><param value="true" name="play"><param value="false" name="menu"><param value="best" name="quality"><param value="#fff" name="bgcolor"><param value="transparent" name="wmode"><param value="sameDomain" name="allowscriptaccess"></object>
+<div id="slideshow-container">
+	<div id="slides">
+	  <img style="opacity: 0; visibility: hidden;" src="test_artykuly_pliki/1.jpg">
+	  <img style="opacity: 1; visibility: visible;" src="test_artykuly_pliki/2.jpg">
+	  <img style="opacity: 0; visibility: hidden;" src="test_artykuly_pliki/3.jpg">
+	  <img style="opacity: 0; visibility: hidden;" src="test_artykuly_pliki/4.jpg">
+	</div>
+	<div id="slideButtons">
+		<button style="background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(0, 0, 0);" class="slideButton" id="b1">1</button>
+		<button style="left: 20px; background: none repeat scroll 0% 0% rgb(0, 0, 0); color: rgb(255, 255, 255);" class="slideButton" id="b2">2</button>
+		<button style="left: 40px; background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(0, 0, 0);" class="slideButton" id="b3">3</button>
+		<button style="left: 60px; background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(0, 0, 0);" class="slideButton" id="b4">4</button>
+	</div>
+</div>
+
+    			</div>
+
+				</div>
+				
+				<div class="h_menu">
+	 				<div class="h_menu2"><ul><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=herbaty_biale"><img style="vertical-align: middle;" src="test_artykuly_pliki/biale.png">Białe</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=herbaty_zielone"><img style="vertical-align: middle;" src="test_artykuly_pliki/zielone.png">Zielone</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=herbaty_pu_erh"><img style="vertical-align: middle;" src="test_artykuly_pliki/czerwona.png">Pu-Erh</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=ziola"><img style="vertical-align: middle;" src="test_artykuly_pliki/zielone.png">Zioła</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=rooibos"><img style="vertical-align: middle;" src="test_artykuly_pliki/afryka.png">Rooibos</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=herbaty_czarne"><img style="vertical-align: middle;" src="test_artykuly_pliki/czarne.png">Czarne</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=akcesoria"><img style="vertical-align: middle;" src="test_artykuly_pliki/czerwona.png">Akcesoria</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=grecja"><img style="vertical-align: middle;" src="test_artykuly_pliki/biale.png">Grecja</a></li><li style="clear:both"></li></ul>
+	 				</div>
+				</div>
+				<div class="info_and_tools">
+					<div class="info" style="float:left;">
+						<a href="http://localhost/?go=artykuly&amp;alias=o-nas">O nas</a>
+						<a href="http://localhost/?go=artykuly&amp;alias=regulamin">regulamin</a>
+						<a href="http://localhost/?go=artykuly&amp;alias=wysylka-i-platnosci">Wysyłka i Płatnośći</a>
+						<a href="http://localhost/?go=artykuly&amp;alias=reklamacje">Reklamacje</a>
+						<a href="http://localhost/?go=artykuly&amp;alias=gwarancja_jakosci">Gwarancja jakości</a>
+					</div>
+					<div class="tools" align="right">
+                            <a href="http://localhost/?go=rejestracja" class="tool_register">Rejestracja</a><br style="clear: both">
+					</div>
+				</div>
+
+				<div class="content_conteiner">
+
+			
+					<div class="content">
+						<div class="h_line"></div><div><img src="test_artykuly_pliki/tea.png" class="site_title"><h1 class="site_title">O nas</h1></div>
+<div class="article">
+     
+	 <p>Naszym najbardziej rozwiniętym zmysłem jest zdecydowanie zmysł smaku! Uwielbiamy próbować, kosztować, degustować....</p>
+<p>Kuchnia to koronne miejsce w naszym domu. To w niej spędzamy najwięcej czasu eksperymentując i tworząc dania. Niekiedy, na drodze prób i błędów, udaje nam się wymyślić coś całkowicie nowego, innym razem posiłkujemy się gotowymi przepisami- zwykle je modyfikujemy i... WUALA! Otrzymujemy pyszne dania, których wykonanie zajmuje zazwyczaj parę chwil, a swój niepowtarzalny smak zawdzięczają dobrym składnikom i prostym połączeniom smakowym. </p>
+<p>Jeżeli ktoś z Państwa chciałby zasilić poniższy zbiór recepturami na swoje kulinarne specjały, to bardzo chętnie zamieścimy je na naszej stronie, a jeszcze chętniej wypróbujemy.</p>
+
+<p>Smacznego!!</p>
+
+
+<h1>Przekąski:</h1>
+<h2>Zapiekany ser twarogowy</h2>
+<div  class="ingredients"><h3>Składniki:</h3>
+<div>
+	<ul>
+		<li>400 g sera twarogowego (najlepiej chudy lub półtłusty)</li>
+		<li>2 ząbki czosnku</li>
+		<li>2 pomidory</li>
+		<li>grecki oregano lub bazylia (wg uznania)</li>
+		<li>2 łyżki oliwy z oliwek KALLISTO</li>
+		<li>sól, pieprz (wg uznania)</li>
+	</ul>
+</div>
+</div>
+<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Ser kroimy w plastry (grubość 0,5-0,8 cm lub wg uznania). Następnie układamy na blasze do pieczenia wyłożonej folią aluminiową.</p>
+<p>Zmiażdżony czosnek mieszamy z oliwą oraz ziołami. Połową powstałego sosu polewamy ser. Na wierzchu układamy plastry pomidora. Całość skrapiamy pozostałą ilością sosu. </p>
+
+<p>Ser zapiekamy w piekarniku nagrzanym do temperatury 160 stopni przez ok. 20-30 minut. W trakcie pieczenia z sera może wyciec serwatka, która łączy się z oliwą i ziołami- można ją zlać i wykorzystać do innych potraw. </p>
+
+
+<h2>Po prostu SER</h2>
+	<div  class="ingredients"><h3>Składniki:</h3>
+		<div>
+		<ul>
+			<li>ser twarogowy (najlepiej chudy lub półtłusty)</li>
+			<li>oliwa z oliwek KALLISTO</li>
+			<li>greckie oregano lub bazylia (wg uznania)</li>
+			<li>chrupiące pieczywo, np. bagietka (w wersji zdrowszej chleb pełnoziarnisty- my używamy chleba żytniego)</li>
+			<li>szczypiorek (opcjonalnie)</li>
+		</ul>
+		</div>
+	</div>
+<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Przekąska bardzo prosta, zdrowa i smaczna. Aby ją przygotować wystarczy pokroić ser w plastry, polać dużą ilością oliwy (tak, aby móc w niej maczać pieczywo) oraz posypać ziołami i pokrojonym drobno szczypiorkiem. </p>
+<p>Smak dania zależy od jakości użytej oliwy. Lekko pikantny smak greckiej oliwy Kalisto znakomicie zaostrzy delikatny smak sera, nadając całości apetycznego charakteru.</p>
+
+
+<h2>Twarożek z suszonymi pomidorami</h2>
+<div  class="ingredients"><h3>Składniki:</h3>
+	<div>
+		<strong>Wersja podstawowa:</strong>
+		<ul>
+			<li>twarożek</li>
+			<li>1-2 łyżki jogurtu naturalnego</li>
+			<li>pomidory suszone ALDORO</li>
+			<li>grecka bazylia </li>
+			<li>szczypta soli morskiej</li>
+		</ul>
+
+		<strong>Dodatki:</strong>
+		<ul>
+			<li>szczypiorek</li>
+			<li>prażone ziarna słonecznika</li>
+			<li>czosnek</li>
+		</ul>
+	</div>
+</div>
+<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Twarożek mieszamy z jogurtem naturalnym tak, aby uzyskać gładką konsystencję. Pomidory odsączamy z zalewy i kroimy na drobne kawałki. Łączymy z serem. Następnie solimy do smaku oraz dodajemy bazylii. Danie można urozmaicić uprażonymi na suchej patelni pestkami słonecznika, ząbkiem czosnku lub pokrojonym drobno szczypiorkiem.</p>
+<p>Znakomita pasta kanapkowa. </p>
+
+	 
+<h1>Dania główne</h1>
+<h2>Pikantna rybka</h2>
+<img src="img/artykuly/przepisy/papryka.jpg" src="pikanta_papryka" />
+<div  class="ingredients"><h3>Składniki:</h3>
+	<div>
+		<ul>
+			<li>2 filety białej ryby, np., dorsza</li>
+			<li>2-3 ząbki czosnku</li>
+			<li>1 papryczka piri-piri lub połowa ostrej papryki z nasionami</li>
+			<li>sól</li>
+			<li>pieprz</li>
+			<li>3-4 liście laurowe</li>
+			<li>25 ml octu winnego z białego wina</li>
+			<li>pomidory w puszce</li>
+			<li>4-5 łyżek oliwy z oliwek KALLISTO</li>
+		</ul>
+	</div>
+</div>
+<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Filety rybne posypujemy solą i pieprzem. Dodajemy do nich rozgnieciony czosnek, drobno pokrojoną papryczkę i rozdrobniony liść laurowy. Macerujemy 30 minut, po czym dodajemy pomidory i ocet. Macerujemy przez kolejne 30 minut. </p>
+<p>Po ok. 1 h oczyszczamy rybę z marynaty. Smażymy ją na rozgrzanej oliwie, po czym wkładamy do naczynia żaroodpornego, aby nie wystygła.</p>
+<p>Marynatę zagotowujemy, odparowując wodę. Następnie przecieramy przez sito w celu uzyskania jednolitej masy. Usmażone filety polewamy sosem.</p>
+
+
+<h2>Spaghetti z suszonymi pomidorami i oliwkami</h2>
+<div  class="ingredients"><h3>Składniki:</h3>
+	<div>
+		<ul>
+		<li>makaron spaghetti (najlepsze makarony wytwarzane są z semoliny- mąki otrzymywanej z pszenicy twardej Durum)</li>
+		<li>czarne oliwki KALAMATA (ilość wg uznania)</li>
+		<li> pomidory suszone ALDORO (5 lub więcej, wg uznania)</li>
+		<li>średnia cebula</li>
+		<li>pomidory w puszce</li>
+		<li>1 ząbek czosnku</li>
+		<li>do smażenia: oliwa z oliwek KALLISTO lub zalewa z suszonych pomidorów ALDORO</li>
+		<li>grecka bazylia</li>
+		<li>garść natki piertuszki</li>
+		<li>parmezan</li>
+		</ul>
+	</div>
+</div>
+<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Cebulę oraz czosnek kroimy w kosteczkę. Podsmażamy na rozgrzanej patelni- należy uważać, aby czosnek się nie przypalił, gdyż nada potrawie gorzki smak. </p>
+<p>Oliwki i suszone pomidory kroimy, wrzucamy na patelnię i lekko podsmażamy. Następnie wlewamy pomidory z puszki, całość mieszamy. Doprawiamy do smaku bazylią, wg uznania można dodać również inne przyprawy- należy uważać na ich ilość i intensywność, gdyż mogą zagłuszyć smak potrawy.</p>
+<p>Makaron gotujemy al’dente. Nitki nie posklejają się, gdy do gotującej wody dodamy parę kropel oliwy lub oleju. Makaron łączymy z sosem. Podajemy z parmezanem i natką pietruszki.</p>
+<p>Makaron ugotowany al’dente ma niższy indeks glikemiczny- nie tuczy oraz daje uczucie sytości na dłużej. Dla diabetyków polecamy makaron pełnoziarnisty.</p>
+
+
+<h2>Pizza na cieście pełnoziarnistym z kaparami, łososiem i śmietaną</h2>
+<img src="img/artykuly/przepisy/pizza_losos.jpg" alt="pizza łososiowa" />
+<div  class="ingredients"><h3>Składniki:</h3>
+	<div>
+		<ul>
+			<strong>Ciasto:</strong>
+			<li>2 szklanki mąki pełnoziarnistej</li>
+			<li>1 szklanka mąki pszennej</li>
+			<li>0, 5 kostki drożdży</li>
+			<li>1 szklanka przegotowanej, wystudzonej wody (lub trochę w razie potrzeby)</li>
+			<li>3 łyżki oliwy z oliwek KALLISTO</li>
+			<li>1 łyżeczka soli</li>
+			<li>greckie oregano/ bazylia</li>
+
+
+			<strong>Dodatki:</strong>
+			<li>mały słoiczek koncentratu pomidorowego</li>
+			<li>2-3 ząbki czosnku</li>
+			<li>greckie oregano/ bazylia</li>
+			<li>2 łyżki półtłustej śmietany</li>
+			<li>200 g filetu z łososia</li>
+			<li>3-4 łyżeczki kaparów ALDORO (odsączamy z zalewy)</li>
+			<li>pomidory suszone ALDORO (wg uznania)</li>
+			<li>ser feta</li>
+			<li>1-2 czerwone cebule</li>
+			<li>sól, pieprz </li>
+			<li>pół cytryny</li>
+			<li>1 łyżka oliwy z oliwek KALLISTO</li>
+		</ul>
+	</div>
+</div>
+<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Łososia doprawiamy solą, pieprzem, czosnkiem oraz skrapiamy sokiem z cytryny- odstawiamy na ok 30 minut do lodówki.</p>
+<p>Mąkę wysypujemy na stolnicę, rozkruszany drożdże, dodajemy oliwę, sól, przyprawy, wodę. Całość mieszamy. Jeżeli ciasto klei się do rąk, podsypujemy je pszenną mąką. Gotowe ciasto rozwałkowujemy i przekładamy do blaszki. Nie czekam aż urośnie, ponieważ rośnie w piekarniku pod wpływem wysokiej temperatury. Blaszkę z ciastem wstawiamy do rozgrzanego na 200 stopni piekarnika na ok. 15-20 min. </p>
+<p>Koncentrat pomidorowy mieszamy z oliwy z oliwek, czosnkiem, ziołami. Powstały sos rozsmarowujemy na podpieczonym cieście. Następnie rozsmarowujemy śmietanę i układamy na niej pokrojonego w paski łososia. Przybieramy kaparami (część kaparów odkładamy i posypujemy nimi już gotową pizzę), krążkami cebuli, na wierzchu rozkładamy plasterki fety, kawałki suszonych pomidorów, całość przyprawiamy pieprzem i ziołami. Pieczemy w temperaturze 200 stopni przez ok. 30-40 minut. </p>
+
+
+<h2>Faszerowane papryki</h2>
+	<div  class="ingredients"><h3>Składniki:</h3>
+	<div>
+		<ul>
+			<li>3 czerwone i 6 białych papryk (ilość i rodzaj papryk zależy od własnych upodobań)</li>
+			<li>50 dag mięsa mielonego (najlepsze jest wołowe, ale może być również wieprzowina)</li>
+			<li>2 cebule</li>
+			<li>3 ząbki czosnku</li>
+			<li>3 pomidory</li>
+			<li>mały koncentrat pomidorowy</li>
+			<li>sól, pieprz, papryka słodka, papryka ostra, greckie oregano</li>
+			<li>puszka czerwonej fasoli</li>
+			<li>oliwa z oliwek KALLISTO do smażenia</li>
+			<li>ser żółty</li>
+		</ul>
+	</div>
+	</div>
+<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Paprykę myjemy, odcinamy kapelusiki i wydrążamy w środku.</p>
+<p>Na rozgrzanej oliwie podsmażamy pokrojoną w kostkę cebulę. Następnie do cebuli dodajemy mięso mielone, które przyprawiamy solą, pieprzem, papryką słodką i ostrą. Do mięsa dodajemy parę łyżeczek koncentratu pomidorowego, pokrojone w kostkę pomidory i przeciśnięty przez praskę czosnek. Podsmażamy jeszcze chwilę i wsypujemy fasolę z puszki. Całość należy odparować, aby sos nie był za rzadki.</p>
+<p>Papryki lekko solimy od środka, napełniamy farszem, na którego wierzchu kładziemy kawałki sera żółtego. Zamykamy kapelusikami- można je przymocować wykałaczkami. Pieczemy w rozgrzanym do 180 stopni piekarniku przez ok. 20-30 minut.</p> 
+<p>Nasza rada!</p>
+<p>Aby pomidory nie rozwodniły farszu, przed pokrojeniem należy usunąć z nich nasiona.</p>
+
+
+<h2>Pasta Melitzanosalata</h2>
+	<div  class="ingredients"><h3>Składniki:</h3>
+	<div>
+		<ul>
+			<li>1 kg bakłażanów</li>
+			<li>2-3 ząbki czosnku</li>
+			<li>oliwa z oliwek KALLISTO</li>
+			<li>1 czerwona papryka</li>
+			<li>ser feta</li>
+			<li>koperek</li>
+			<li>pietruszka</li>
+			<li>sól, pieprz do smaku</li>
+			<li>ocet winny</li>
+		</ul>
+	</div>
+	</div>
+<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Bakłażany rozcinamy wzdłuż. Delikatnie rozchylamy i nacieramy solą od środka, dzięki której po upieczeniu nie będą one gorzkie. Tak przygotowane pieczemy w temperaturze 180 stopni przez ok. 30 minut. </p>
+<p>W międzyczasie myjemy paprykę, usuwany z niej nasiona oraz wstawiamy do piekarnika na ok. 15 min., aby zmiękła.</p>
+<p>Po wskazanym czasie wyciągamy bakłażany i paprykę. Bakłażany spłukujemy wodą- usuwamy w ten sposób sól oraz schładzamy je. Z jeszcze ciepłych ściągamy skórkę. Miąższ z bakłażanów kroimy w kostkę. W kostkę kroimy również paprykę (można z niej wcześniej ściągnąć skórkę). Paprykę i bakłażany mieszamy. </p>
+<p>2-3 ząbki czosnku wkładamy do blendera, zalewamy oliwą z oliwek i miksujemy. Powstałym sosem polewamy masę bakłażanowo-paprykową. Dodajemy drobno pokrojony koperek, pietruszkę, pieprz i odrobinę soli (uwaga, aby nie przesolić!), parę kropel octu winnego. Całość mieszamy. Ewentualnie dodajemy oliwy z oliwek, aby osiągnąć lepszą konsystencję. Na górę sypiemy pokruszony ser feta.</p>
+
+<p>Pasta idealna do pieczywa, grzanek i mięsa mielonego.</p>
+
+<p>Jak kupić dobrego bakłażana?</br>
+Szypułka musi być świeża, zielona. Skórka powinna być jędrna i lśniąca, bez plam.</p>
+
+<h1>Koktajle</h1>
+<h2>Koktajl energetyczny: guarana z bananem</h2>
+	<div  class="ingredients"><h3>Składniki:</h3>
+	<div>
+		<ul>
+			<li>2 łyżeczki guarany (guaranę można zastąpić 2-3 łyżeczkami orzeszków cola)
+			<li>2 dojrzałe banany
+			<li>1 szklanka mleka
+			<li>1 łyżeczka miodu (polecamy grecki miód pomarańczowy)
+		</ul>
+	</div>
+	</div>
+	<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Podane ilości dodatków można zmieniać według uznania i własnego smaku.</p>
+<p>Wszystkie składniki miksujemy przez parę minut. </p>
+<p>Koktajl polecamy spożywać przed wysiłkiem intelektualnym bądź fizycznym.</p>
+
+
+<h2>Koktajl energetyczny: guarana z truskawkami i wanilią</h2>
+	<div  class="ingredients"><h3>Składniki:</h3>
+	<div>
+		<ul>
+			<li>2 łyżeczki guarany (guaranę można zastąpić 2-3 łyżeczkami orzeszków cola)
+			<li>1-2 szklanki truskawek bez szypułek
+			<li>1 laska wanilii (do koktajlu potrzebne będą nam nasionka)
+			<li>brązowy cukier (wg uznania)
+		</ul>
+	</div>
+	</div>
+<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Wanilię rozcinamy na pół i delikatnie wyskrobujemy nasionka.</p>
+<p>Wszystkie składniki miksujemy przez parę minut.</p>
+
+<p>Koktajl polecamy spożywać podczas wysiłku intelektualnego i fizycznego. </p>
+
+
+
+<h2>Napój wysokobiałkowy: maca z mlekiem i miodem</h2>
+	<div  class="ingredients"><h3>Składniki:</h3>
+	<div>
+		<ul>
+			<li>1-2 łyżeczki maca
+			<li>szklanka mleka
+			<li>1 łyżeczka miodu (polecamy grecki miód tymiankowy)
+		</ul>
+	</div>
+	</div>
+
+<br style="clear:both" /><h3>Przygotowanie</h3>
+<p>Całość podgrzewamy do momentu aż maca i miód rozpuszczą się w mleku.</p>
+
+<p>Koktajl polecamy spożywać godzinę przed treningiem (maca wpływa na wzrost wydolności mięśni oraz chroni je przed uszkodzeniem ) lub godzinę po treningu ( przyspiesza regenerację organizmu). Osoby nietrenujące mogą spożywać macę niezależnie od pory dnia.</p>
+
+
+	 
+	<!----------------------------KONIEC -->
+	
+</div>
+						<div style="clear:both;height:100px;"></div>
+					</div>
+					
+					<div class="right_column">
+					
+            <form action="?go=logowanie" method="post">
+
+                        <input name="login" value="adres email" class="login" onfocus="if(this.value=='adres email') this.value='';" type="text"><br>
+                        <input name="password" value="hasło" class="login" onfocus="replaceT(this);" type="text"><br>
+                        <input name="autologin" value="1" type="checkbox"> Zapamiętaj mnie.<br>
+                        <input name="url" value="/?go=artykuly&amp;alias=o-nas" type="hidden"><input name="Zaloguj" value="Zaloguj" style="margin:0;padding:0" type="submit"><br><br><a href="http://localhost/?go=koszyk"><h1 class="right_column_cart_header">Koszyk</h1></a>Twój koszyk jest aktualnie pusty.<br>
+		             <br>Zapraszamy do zakupów!<br><br>
+		             <strong>Darmowa wysyłka przy zamówieniach powyżej 180zł</strong>
+					</form></div>
+					
+				</div>	
+					
+   				 
+   				 
+   				 <div class="footer" align="center">
+   				 <div class="h_line"></div>
+   				 <div class="h_line" style="margin-top:10px;"></div>
+   				 <ul><li><a "="" href="http://localhost/?go=herbaty&amp;category=herbaty_biale">Herbaty Białe</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=herbaty_zielone">Herbaty Zielone</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=herbaty_pu_erh">Herbaty Pu-Erh</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=ziola">Herbaty Zioła</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=rooibos">Herbaty Rooibos</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=herbaty_czarne">Herbaty Czarne</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=akcesoria">Herbaty Akcesoria</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=grecja">Herbaty Grecja</a></li></ul>
+   				 <div class="copyright"><p>Copyright © 2011 by TIENTEA</p></div>
+   				 </div>
+
+
+			</body></html>

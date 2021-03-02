@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html slick-uniqueid="3" xmlns="http://www.w3.org/1999/xhtml"><head>
+	 				<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+					<script type="text/javascript" src="test_artykuly_pliki/yetii.js"></script>
+					<script type="text/javascript" src="test_artykuly_pliki/swfobject.js"></script>
+					<script type="text/javascript" src="test_artykuly_pliki/custom_form.js"></script><style type="text/css">input.styled { display: none; } select.styled { position: relative; width: 190px; opacity: 0; filter: alpha(opacity=0); z-index: 5; } .disabled { opacity: 0.5; filter: alpha(opacity=50); }</style>
+					<script type="text/javascript" src="test_artykuly_pliki/mootools.js"></script>
+					<script type="text/javascript" src="test_artykuly_pliki/slideshow.js"></script>
+					<link href="test_artykuly_pliki/style.css" rel="stylesheet" type="text/css">
+					<link href="test_artykuly_pliki/font.css" rel="stylesheet" type="text/css">
+					<link href="templates/templates.css" rel="stylesheet" type="text/css">
+					<script type="text/javascript">
+				      var flashvars = {};
+				      var params = {};
+				      params.play = "true";
+				      params.menu = "false";
+				      params.quality = "best";
+				      params.bgcolor = "#fff";
+				      params.wmode  = "transparent";
+				      params.allowscriptaccess = "sameDomain";
+				      var attributes = {};
+				      attributes.id = "flash1";
+				      swfobject.embedSWF("smoke.swf", "smoke", "100", "250", "9.0.0", false, flashvars, params, attributes);
+
+						function replaceT(obj){
+						var newO=document.createElement('input');
+						newO.setAttribute('type','password');
+						newO.setAttribute('name',obj.getAttribute('name'));
+						newO.setAttribute('style', 'margin-top:5px;'); 
+						newO.setAttribute('class', 'login'); 
+						obj.parentNode.replaceChild(newO,obj);
+						newO.focus();
+						}
+                        
+                   function showArticleImage(id){
+                        var container = $('articleImages_box');
+                        var images = container.getElements('img');
+
+                         
+                         images[id].fade('in');
+                        for(var i=0; i<images.length; i++){
+                            if(i!=id){
+                                 images[i].fade('out');
+                            } 
+                        }
+                   }
+                   
+                   
+                    function hideArticleImage(){
+                        var container = $('articleImages_box');
+                        var images = container.getElements('img');
+                        images[0].fade('in');
+                        for(var i=1; i<images.length; i++){
+                                images[i].fade('out');
+                        }
+                    }
+                        
+                      
+					</script><style media="screen" type="text/css">#smoke {visibility:hidden}</style>
+			</head>
+			<body>
+
+				<div class="header">
+				<div class="smoke_conteiner">
+				    <object data="test_artykuly_pliki/smoke.swf" id="flash1" type="application/x-shockwave-flash" height="250" width="100"><param value="true" name="play"><param value="false" name="menu"><param value="best" name="quality"><param value="#fff" name="bgcolor"><param value="transparent" name="wmode"><param value="sameDomain" name="allowscriptaccess"></object>
+<div id="slideshow-container">
+	<div id="slides">
+	  <img style="opacity: 0; visibility: hidden;" src="test_artykuly_pliki/1.jpg">
+	  <img style="opacity: 1; visibility: visible;" src="test_artykuly_pliki/2.jpg">
+	  <img style="opacity: 0; visibility: hidden;" src="test_artykuly_pliki/3.jpg">
+	  <img style="opacity: 0; visibility: hidden;" src="test_artykuly_pliki/4.jpg">
+	</div>
+	<div id="slideButtons">
+		<button style="background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(0, 0, 0);" class="slideButton" id="b1">1</button>
+		<button style="left: 20px; background: none repeat scroll 0% 0% rgb(0, 0, 0); color: rgb(255, 255, 255);" class="slideButton" id="b2">2</button>
+		<button style="left: 40px; background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(0, 0, 0);" class="slideButton" id="b3">3</button>
+		<button style="left: 60px; background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(0, 0, 0);" class="slideButton" id="b4">4</button>
+	</div>
+</div>
+
+    			</div>
+
+				</div>
+				
+				<div class="h_menu">
+	 				<div class="h_menu2"><ul><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=herbaty_biale"><img style="vertical-align: middle;" src="test_artykuly_pliki/biale.png">Białe</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=herbaty_zielone"><img style="vertical-align: middle;" src="test_artykuly_pliki/zielone.png">Zielone</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=herbaty_pu_erh"><img style="vertical-align: middle;" src="test_artykuly_pliki/czerwona.png">Pu-Erh</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=ziola"><img style="vertical-align: middle;" src="test_artykuly_pliki/zielone.png">Zioła</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=rooibos"><img style="vertical-align: middle;" src="test_artykuly_pliki/afryka.png">Rooibos</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=herbaty_czarne"><img style="vertical-align: middle;" src="test_artykuly_pliki/czarne.png">Czarne</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=akcesoria"><img style="vertical-align: middle;" src="test_artykuly_pliki/czerwona.png">Akcesoria</a></li><li><a class="h_menu_item " href="http://localhost/?go=herbaty&amp;category=grecja"><img style="vertical-align: middle;" src="test_artykuly_pliki/biale.png">Grecja</a></li><li style="clear:both"></li></ul>
+	 				</div>
+				</div>
+				<div class="info_and_tools">
+					<div class="info" style="float:left;">
+						<a href="http://localhost/?go=artykuly&amp;alias=o-nas">O nas</a>
+						<a href="http://localhost/?go=artykuly&amp;alias=regulamin">regulamin</a>
+						<a href="http://localhost/?go=artykuly&amp;alias=wysylka-i-platnosci">Wysyłka i Płatnośći</a>
+						<a href="http://localhost/?go=artykuly&amp;alias=reklamacje">Reklamacje</a>
+						<a href="http://localhost/?go=artykuly&amp;alias=gwarancja_jakosci">Gwarancja jakości</a>
+					</div>
+					<div class="tools" align="right">
+                            <a href="http://localhost/?go=rejestracja" class="tool_register">Rejestracja</a><br style="clear: both">
+					</div>
+				</div>
+
+				<div class="content_conteiner">
+
+			
+					<div class="content">
+						<div class="h_line"></div><div><img src="test_artykuly_pliki/tea.png" class="site_title"><h1 class="site_title">O nas</h1></div>
+<div class="article">
+       <p>Nie możesz się zdecydować co wybrać i co chwila zmieniasz zdanie? Nie jesteś pewien, które produkty spełniłyby Twoje oczekiwania? Zdaj się na nas!</p>
+		<p>Specjalnie dla naszych Klientów przygotowaliśmy gotowe zestawy tematyczne. Każdy z nich składa się z 4-5 produktów o podobnym charakterze. Listę zestawów prezentujemy poniżej:</p>
+
+		<a href="#zestawy_herbaciane"><h2>ZESTAWY HERBACIANE:</h2></a>
+		<ul class="tea_sets" style="margin-left:50px;">
+			<li><a href="#zestaw_poczatkujacego">Dla Początkujących<br /> pierwsze kroki w „herbacianym świecie”</a></li>
+			<li><a href="#zestaw_dla_niej">Dla Niej <br /> delikatnie i romantyczne</a></li>
+			<li><a href="#zestaw_dla_niego">Dla Niego <br /> zdecydowanie i odważnie</a></li>
+			<li><a href="#zestaw_efektowny">Efektowny <br /> czyli jak zaskoczyć gości<a/></li>
+		</ul>
+		<br />
+		<a href="#zestawy_ziolowe"><h2>ZESTAWY ZIOŁOWE:</h2></a>
+		<ul class="tea_sets" style="margin-left:50px;">
+			<li><a href="#zestaw_wzmacniajacy">Wzmacniający <br /> nie daj się chorobie!</a></li>
+			<li><a href="#zestaw_energetyzujacy">Energetyzujący <br />aby mieć siłę do pracy i zabawy</a></li>
+			<li><a href="#zestaw_odchudzajacy">Odchudzający <br /> pręcz ze zbędnymi kilogramami</a></li>
+			<li><a href="#zestaw_milosny">Miłosny <br /> aby podsycić żar namiętności</a></li>
+		</ul>
+		<br />
+		<p>Aby zakupić zestaw, wybierz ten, który Cię interesuje, kliknij dodaj, a wszystkie zawarte w nim produkty zostaną przeniesione do Twojego koszyka. </p>
+
+		<p>Pragniemy, abyście byli w 100% zadowoleni z zakupu, dlatego wprowadziliśmy możliwość modyfikacji zestawów (zmiany można dokonywać, gdy zestaw jest już w koszyku)- proponowane produkty można wymienić na inne, zmieniać ich ilości, usuwać te, które Ci nie odpowiadają bądź dodawać nowe.</p>
+		<p>Wszystko po to, abyś stworzył zestaw idealny dla siebie!</p>
+		<br />
+		<a name="zestawy_herbaciane"><h1>Zestawy herbaciane</h1></a>
+		
+		<table>
+			<tr>
+				<td colspan="4" align="left" valign="top" style="text-align:justify">
+				<a name="zestaw_poczatkujacego"></a><h2>Dla Początkującego - czyli pierwsze kroki w „herbacianym świecie”</h2>
+					<p>Tworząc zestaw dla początkującego, szukaliśmy herbat o dobrze znanych smakach, które przypadną do gustu niemal każdemu. 
+					Dlatego znalazła się w nim herbata z truskawką, czekoladą oraz napar o odświeżającej  nucie. Całości dopełniają akcesoria- ich użycie pozwoli w łatwy sposób zaparzyć pyszny napar nawet najbardziej „zielonym” herbaciarzom. </p>
+				</td>
+
+			</tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+			<tr>
+				<td>
+				<img width="170px" src="img/produkty/truskawkowe_ciasteczko_1.jpg" alt="truskawkowe ciasteczko"><br />Truskawkowe Ciasteczko
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/rooibos_czekolada_z_pomarancza_1.jpg" alt="Rooibos czekolada z pomarańczą"><br />Rooibos Czekolada z Pomarańczą
+				</td>				
+
+				<td>
+				<img width="170px" src="img/produkty/czas_na_relaks_1.jpg" alt="czas na relaks"><br />Czas na relaks
+				</td>
+				<td>
+					<img width="170px" src="img/produkty/zaparzacz_kulka_1.jpg" alt="termometr" ><br />Zaparzacz kulka
+				</td>
+			</tr>
+			<tr><td colspan="4">
+			<form action="?go=koszyk" method="post">
+				<input type="hidden" name="product_1" value="4,Truskawkowe Ciasteczko,?go=herbaty&category=herbaty_zielone&product=truskawkowe_ciasteczko,50,11.8,http://www.test.tientea.pl/img/produkty/truskawkowe_ciasteczko_1.jpg" />
+				<input type="hidden" name="product_2" value="41,Rooibos Czekolada z Pomarańczą,?go=herbaty&category=herbaty_rooibos&product=rooibos_czekolada_z_pomarancza,50,8.3,http://www.test.tientea.pl/img/produkty/rooibos_czekolada_z_pomarancza_1.jpg" />
+				<input type="hidden" name="product_3" value="48,Czas na relaks,?go=herbaty&category=herbaty_czarne&product=czas_na_relaks,50,9.86,http://www.test.tientea.pl/img/produkty/czas_na_relaks_1.jpg" />
+				<input type="hidden" name="product_4" value="120,Zaparzacz Kulka,?go=herbaty&category=akcesoria&product=zaparzacz_kulka,1,16,http://www.test.tientea.pl/img/produkty/zaparzacz_kulka_1.jpg" />
+				<input class="form_submit" type="submit" name="cart" value="Dodaj Zestaw" >
+				</form>
+			</td></tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td colspan="4"  align="right" valign="top"  style="text-align:justify">
+					<a name="zestaw_dla_niej"></a><h2>Dla Niej - delikatnie i romantyczne</h2>
+					<p>Kompozycja DLA NIEJ dedykowana jest dla kobiet lubiących delikatne i subtelne, a zarazem wyraziste smaki. W zestawie dominują herbaty o owocowo- kwiatowej nucie- wyborny smak i zniewalający zapach w jednym!</p>
+				</td>
+			</tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+			<tr>
+				<td>
+				<img width="170px" src="img/produkty/malinowo-waniliowa_konfitura_1.jpg" alt="Malinowo-Waniliowa Konfitura"><br />Malinowo-Waniliowa Konfitura
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/truskawki_w_szampanie_1.jpg" alt="truskawkowi w szampanie"><br />Truskawki w szampanie
+				</td>				
+
+				<td>
+				<img width="170px" src="img/produkty/pai_mu_tan_romance_1.jpg" alt="Pai Mu Tan Romance"><br />Pai Mu Tan Romance
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/uspokajajaca_1.jpg" alt="uspokajajaca"><br />Uspokajająca
+				</td>
+			</tr>
+			<tr><td colspan="4">
+				<form action="?go=koszyk" method="post">
+					<input type="hidden" name="product_1" value="49,Malinowo-Waniliowa Konfitura,?go=herbaty&category=herbaty_czarne&product=malinowo-waniliowa_konfitura,50,10.66,http://www.test.tientea.pl/img/produkty/malinowo-waniliowa_konfitura_1.jpg" />
+					<input type="hidden" name="product_2" value="102,Truskawki w Szampanie,?go=herbaty&category=herbaty_zielone&product=truskawki_w_szampanie,50,12.2,http://www.test.tientea.pl/img/produkty/truskawki_w_szampanie_1.jpg" />
+					<input type="hidden" name="product_3" value="45,Pai Mu Tan Romance,?go=herbaty&category=herbaty_biale&product=pai_mu_tan_romance,50,18.4,http://www.test.tientea.pl/img/produkty/pai_mu_tan_romance_1.jpg" />
+					<input type="hidden" name="product_4" value="51,Uspokajająca,?go=herbaty&category=herbaty_rooibos&product=uspokajajaca,50,9.4,http://www.test.tientea.pl/img/produkty/uspokajajaca_1.jpg" />
+					<input class="form_submit" type="submit" name="cart" value="Dodaj Zestaw" >
+				</form></td>
+				</tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td colspan="4" align="left" valign="top"  style="text-align:justify">
+					<a name="zestaw_dla_niego"></a><h2>Dla Niego - zdecydowanie i odważnie</h2>
+					<p>Herbaty o intensywnym aromacie i stanowczym smaku. Znajdziemy w nich akcenty alkoholowe, owocowe a także słodkie, deserowe. Z pewnością przypadną do gustu Panom w różnym wieku. </p>
+				</td>
+			</tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+			<tr>
+				<td>
+				<img width="170px" src="img/produkty/very_cherry_rum_1.jpg" ><br />Malinowo-Waniliowa Konfitura
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/choco_irish_cream_1.jpg" ><br />Choco Irish Cream
+				</td>				
+
+				<td>
+				<img width="170px" src="img/produkty/golden_monkey_1.jpg" ><br />Golden Monkey
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/wino-gronowe_grono_1.jpg" ><br />Wino-gronowe Grono
+				</td>
+			</tr>
+			
+			<tr><td colspan="4">
+				<form action="?go=koszyk" method="post">
+					<input type="hidden" name="product_1" value="25,Very Cherry Rum,?go=herbaty&category=herbaty_czarne&product=very_cherry_rum,50,8.97,http://www.test.tientea.pl/img/produkty/very_cherry_rum_1.jpg" />
+					<input type="hidden" name="product_2" value="33,Choco Irish Cream,?go=herbaty&category=herbaty_czarne&product=choco_irish_cream,50,9.3,http://www.test.tientea.pl/img/produkty/choco_irish_cream_1.jpg" />
+					<input type="hidden" name="product_3" value="65,Golden Monkey,?go=herbaty&category=herbaty_czarne&product=golden_monkey,50,15.1,http://www.test.tientea.pl/img/produkty/golden_monkey_1.jpg" />
+					<input type="hidden" name="product_4" value="11,Wino- gronowe Grono,?go=herbaty&category=herbaty_zielone&product=wino-gronowe_grono,50,9.8,http://www.test.tientea.pl/img/produkty/wino-gronowe_grono_1.jpg" />
+					
+					<input class="form_submit" type="submit" name="cart" value="Dodaj Zestaw" >
+				</form></td>
+				</tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td colspan="4" align="left" valign="top"  style="text-align:justify">
+					<a name="zestaw_efektowny"></a><h2>Efektowny - czyli jak zachwycić gości</h2>
+					<p>Herbaciane perełki! Ich wygląd, smak i aromat wywołuje słowa zachwytu. Każda z proponowanych herbat zawiera w sobie inną niespodziankę. Napary, które znakomicie sprawdzą się podczas spotkań w gronie znajomych i rodziny- słowa zachwytu gwarantowane</p>
+				</td>
+			</tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+			<tr>
+				<td>
+				<img width="170px" src="img/produkty/jasmine_lichi_1.jpg" ><br />Jasmine Lichi
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/owocowy_mus_1.jpg" ><br />Owocowy Mus
+				</td>				
+
+				<td>
+				<img width="170px" src="img/produkty/jak_w_ulu_1.jpg" ><br />Jak w Ulu
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/fujian_white_kokos-wanilia_1.jpg" ><br />Fuijan White Kokos-Wanilia
+				</td>
+			</tr>
+						
+			<tr><td colspan="4">
+				<form action="?go=koszyk" method="post">
+					<input type="hidden" name="product_1" value="87,Jasmine Lichi,?go=herbaty&category=herbaty_biale&product=jasmine_lichi,50,32.8,http://www.test.tientea.pl/img/produkty/jasmine_lichi_1.jpg" />
+					<input type="hidden" name="product_2" value="21,Owocowy Mus,?go=herbaty&category=herbaty_zielone&product=owocowy_mus,50,9.7,http://www.test.tientea.pl/img/produkty/owocowy_mus_1.jpg" />
+					<input type="hidden" name="product_3" value="28,Jak w Ulu,?go=herbaty&category=herbaty_czarne&product=jak_w_ulu,50,8.9,http://www.test.tientea.pl/img/produkty/jak_w_ulu_1.jpg" />
+					<input type="hidden" name="product_4" value="55,Fujian White Kokos-Wanilia,?go=herbaty&category=herbaty_biale&product=fujian_white_kokos-wanilia,50,17.3,http://www.test.tientea.pl/img/produkty/fujian_white_kokos-wanilia_1.jpg" />
+
+					<input class="form_submit" type="submit" name="cart" value="Dodaj Zestaw" >
+				</form></td>
+				</tr>
+			
+			
+			<tr ><td  class="separator" colspan="4"></td></tr>
+		</table>
+		
+		
+		<a name="zestawy_ziolowe"></a><h1>ZESTAWY Ziołowe:</h1>
+		
+		<table>
+			<tr>
+				<td colspan="4" align="left" valign="top"  style="text-align:justify">
+					<a name="zestaw_wzmacniajacy"></a><h2>Wzmacniający - nie daj się chorobie</h2>
+					<p>Zestaw idealny dla tych, którzy chcą wzmocnić swój organizm w okresie jesienno-zimowym. Ceniony od tysiącleci Żeń-szeń w postaci czystej oraz w połączeniu z pyszną herbatą to pokrzepienie dla ciała i umysłu. Lapacho w kompozycji z leśnymi owocami nie tylko znakomicie smakuje, ale również wspiera układ odpornościowy. Maca zalecana jest w stanach zmęczenia- dostarcza naszemu organizmowi naturalnych aminokwasów, fitohormonów, witamin i minerałów.
+Zestaw WZMACNIAJĄCY to 100% naturalne produkty, które są znane i cenione na całym świecie.</p>
+
+				</td>
+			</tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+			<tr>
+				<td>
+				<img width="170px" src="img/produkty/zen-szen_zmielony_1.jpg" ><br />Żeń-szeń (zmielony)
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/lapacho_owoce_lasu_1.jpg" ><br />Lapacho Owoce Lasu
+				</td>				
+
+				<td>
+				<img width="170px" src="img/produkty/tien_zen-szen_tea_1.jpg" ><br />Tien Żeń-szeń Tea
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/maca_1.jpg" ><br />Maca
+				</td>
+			</tr>
+									
+			<tr><td colspan="4">
+				<form action="?go=koszyk" method="post">
+					
+				<input type="hidden" name="product_1" value="94,Żeń-szeń (zmielony),?go=herbaty&category=ziola&product=zen-szen_zmielony,50,36.8,http://www.test.tientea.pl/img/produkty/zen-szen_zmielony_1.jpg" />
+				<input type="hidden" name="product_2" value="105,Lapacho Owoce Lasu,?go=herbaty&category=ziola&product=lapacho_owoce_lasu,50,9.6,http://www.test.tientea.pl/img/produkty/lapacho_owoce_lasu_1.jpg" />
+				<input type="hidden" name="product_3" value="57,Tien Żeń-szeń Tea,?go=herbaty&category=ziola&product=tien_zen-szen_tea,50,12.4,http://www.test.tientea.pl/img/produkty/tien_zen-szen_tea_1.jpg" />
+				<input type="hidden" name="product_3" value="97,Maca,?go=herbaty&category=ziola&product=maca,50,28,http://www.test.tientea.pl/img/produkty/maca_1.jpg" />
+					<input class="form_submit" type="submit" name="cart" value="Dodaj Zestaw" >
+				</form></td>
+				</tr>
+			
+			
+			<tr ><td  class="separator" colspan="4"></td></tr>
+		</table>
+		
+		
+		<table>
+			<tr>
+				<td colspan="4" align="left" valign="top"  style="text-align:justify">
+					<a name="zestaw_energetyzujacy"></a><h2>Energetyzujący – aby mieć siłę do pracy i zabawy</h2>
+					<p>Zestaw ENERGETYZUJĄCY to propozycja dla osób prowadzących aktywny tryb życia- zarówno w wymiarze fizycznym, jak i intelektualnym. Składa się z całkowicie naturalnych składników pobudzających, które znakomicie zastępują szkodliwe energetyki z puszki. </p>
+				</td>
+			</tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+			<tr>
+				<td>
+				<img width="170px" src="img/produkty/guarana_1.jpg" ><br />Guarana
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/orzeszki_cola_1.jpg" ><br />Orzeszki cola
+				</td>				
+
+				<td>
+				<img width="170px" src="img/produkty/sencha_guarana_1.jpg" ><br />Sencha Guarana
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/ilex_guayusa_1.jpg" ><br />Ilex guayusa
+				</td>
+				
+			</tr>
+			
+			<tr><td colspan="4">
+				<form action="?go=koszyk" method="post">
+					<input type="hidden" name="product_1" value="91,Guarana,?go=herbaty&category=ziola&product=guarana,50,18,http://www.test.tientea.pl/img/produkty/guarana_1.jpg" />
+					<input type="hidden" name="product_2" value="89,Orzeszki cola,?go=herbaty&category=ziola&product=orzeszki_cola,50,7.2,http://www.test.tientea.pl/img/produkty/orzeszki_cola_1.jpg" />
+					<input type="hidden" name="product_3" value="59,Sencha Guarana,?go=herbaty&category=herbaty_zielone&product=sencha_guarana,50,12.5,http://www.test.tientea.pl/img/produkty/sencha_guarana_1.jpg" />
+					<input type="hidden" name="product_4" value="92,Ilex guayusa,?go=herbaty&category=ziola&product=ilex_guayusa,50,35.3,http://www.test.tientea.pl/img/produkty/ilex_guayusa_1.jpg" />
+					
+					
+					<input class="form_submit" type="submit" name="cart" value="Dodaj Zestaw" >
+				</form></td>
+				</tr>
+			
+			
+			<tr ><td  class="separator" colspan="4"></td></tr>
+		</table>
+		
+				<table>
+			<tr>
+				<td colspan="4" align="left" valign="top"  style="text-align:justify">
+					<a name="zestaw_odchudzajacy"></a><h2>Odchudzający - precz ze zbędnymi kilogramami!</h2>
+					<p>Zestaw ODCHUDZAJĄCY bazuje na niezrównanym mordercy tłuszczu- herbacie Pu-Erh. Pu-Erh ma najlepsze właściwości odchudzające spośród wszystkich znanych na świecie herbat- obniża zawartość tłuszczu w organizmie, redukuje poziom cholesterolu oraz wspomaga procesy trawienne. W zestawie umieściliśmy również guaranę, która wpływa korzystnie na przemianę materii, przez co zwiększa redukcję tkanki tłuszczowej i wspomaga odchudzanie. </p>
+				</td>
+			</tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+			<tr>
+				<td>
+				<img width="170px" src="img/produkty/pu-erh_slim_1.jpg" ><br />Pu-Erh Slim
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/pu-erh_gniazda_1.jpg" ><br />Pu-erh Gniazda
+				</td>				
+
+				<td>
+				<img width="170px" src="img/produkty/guarana_1.jpg" ><br />Guarana
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/pu-erh_jezynowo-truskawkowy_1.jpg" ><br />Pu-Erh Jeżynowo- Truskawkowy
+				</td>
+			</tr>
+			<tr><td colspan="4">
+				<form action="?go=koszyk" method="post">
+					<input type="hidden" name="product_1" value="38,Pu-Erh Slim,?go=herbaty&category=herbaty_pu_erh&product=pu-erh_slim,50,8.3,http://www.test.tientea.pl/img/produkty/pu-erh_slim_1.jpg" />
+					<input type="hidden" name="product_2" value="80,Pu-erh Gniazda,?go=herbaty&category=herbaty_pu_erh&product=pu-erh_gniazda,50,13.6,http://www.test.tientea.pl/img/produkty/pu-erh_gniazda_1.jpg" />
+					<input type="hidden" name="product_3" value="91,Guarana,?go=herbaty&category=ziola&product=guarana,50,18,http://www.test.tientea.pl/img/produkty/guarana_1.jpg" />
+					<input type="hidden" name="product_4" value="53,Pu-Erh Jeżynowo- Truskawkowy,?go=herbaty&category=herbaty_pu_erh&product=pu-erh_jezynowo-truskawkowy,50,9.2,http://www.test.tientea.pl/img/produkty/pu-erh_jezynowo-truskawkowy_1.jpg" />
+				
+					<input class="form_submit" type="submit" name="cart" value="Dodaj Zestaw" >
+				</form></td>
+				</tr>
+			
+			
+			<tr ><td  class="separator" colspan="4"></td></tr>
+		</table>
+		
+		
+		<table>
+			<tr>
+				<td colspan="4" align="left" valign="top"  style="text-align:justify">
+					<a name="zestaw_milosny"></a><h2>Miłosny - aby podsycić żar namiętności</h2>
+					<p>Zestaw miłosny to przede wszystkim afrodyzjaki. Damiana pobudzi zmysły Jej, zaś Catuaba i Muira Puama rozbudzi żądze Jego. A Czerwone Serduszko świetnie sprawdzi się dla NICH obojga</p>
+				</td>
+			</tr>
+			<tr ><td  class="separator" colspan="4"></td></tr>
+			<tr>
+				<td>
+				<img width="170px" src="img/produkty/damiana_1.jpg" ><br />Damiana
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/catuaba_1.jpg" ><br />Catuaba
+				</td>				
+
+				<td>
+				<img width="170px" src="img/produkty/muira_puama_wyciag_1.jpg" ><br />Muira Puama wyciąg
+				</td>
+				<td>
+				<img width="170px" src="img/produkty/czerwone_serduszko_1.jpg" ><br />Czerwone serduszko
+				</td>
+			</tr>
+			
+			<tr><td colspan="4">
+				<form action="?go=koszyk" method="post">
+					<input type="hidden" name="product_1" value="100,Damiana,?go=herbaty&category=ziola&product=damiana,50,12,http://www.test.tientea.pl/img/produkty/damiana_1.jpg" />
+					<input type="hidden" name="product_2" value="101,Catuaba,?go=herbaty&category=ziola&product=catuaba,50,11.5,http://www.test.tientea.pl/img/produkty/catuaba_1.jpg" />
+					<input type="hidden" name="product_3" value="107,Muira Puama wyciąg,?go=herbaty&category=ziola&product=muira_puama_wyciag,50,75,http://www.test.tientea.pl/img/produkty/muira_puama_wyciag_1.jpg" />
+					<input type="hidden" name="product_4" value="54,Czerwone Serduszko,?go=herbaty&category=herbaty_czarne&product=czerwone_serduszko,50,8.8,http://www.test.tientea.pl/img/produkty/czerwone_serduszko_1.jpg" />
+					<input class="form_submit" type="submit" name="cart" value="Dodaj Zestaw" >
+				</form></td>
+				</tr>
+			
+			
+			<tr ><td  class="separator" colspan="4"></td></tr>
+		</table>
+	<!----------------------------KONIEC -->
+	
+</div>
+						<div style="clear:both;height:100px;"></div>
+					</div>
+					
+					<div class="right_column">
+					
+            <form action="?go=logowanie" method="post">
+
+                        <input name="login" value="adres email" class="login" onfocus="if(this.value=='adres email') this.value='';" type="text"><br>
+                        <input name="password" value="hasło" class="login" onfocus="replaceT(this);" type="text"><br>
+                        <input name="autologin" value="1" type="checkbox"> Zapamiętaj mnie.<br>
+                        <input name="url" value="/?go=artykuly&amp;alias=o-nas" type="hidden"><input name="Zaloguj" value="Zaloguj" style="margin:0;padding:0" type="submit"><br><br><a href="http://localhost/?go=koszyk"><h1 class="right_column_cart_header">Koszyk</h1></a>Twój koszyk jest aktualnie pusty.<br>
+		             <br>Zapraszamy do zakupów!<br><br>
+		             <strong>Darmowa wysyłka przy zamówieniach powyżej 180zł</strong>
+					</form></div>
+					
+				</div>	
+					
+   				 
+   				 
+   				 <div class="footer" align="center">
+   				 <div class="h_line"></div>
+   				 <div class="h_line" style="margin-top:10px;"></div>
+   				 <ul><li><a "="" href="http://localhost/?go=herbaty&amp;category=herbaty_biale">Herbaty Białe</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=herbaty_zielone">Herbaty Zielone</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=herbaty_pu_erh">Herbaty Pu-Erh</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=ziola">Herbaty Zioła</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=rooibos">Herbaty Rooibos</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=herbaty_czarne">Herbaty Czarne</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=akcesoria">Herbaty Akcesoria</a></li><li><a "="" href="http://localhost/?go=herbaty&amp;category=grecja">Herbaty Grecja</a></li></ul>
+   				 <div class="copyright"><p>Copyright © 2011 by TIENTEA</p></div>
+   				 </div>
+
+
+			</body></html>
